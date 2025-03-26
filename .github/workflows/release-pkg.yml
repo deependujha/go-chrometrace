@@ -25,4 +25,4 @@ jobs:
 
       - name: Publish distribution 📦 to pkg.go.dev
         if: startsWith(github.event.ref, 'refs/tags') || github.event_name == 'release'
-        run: GOPROXY=proxy.golang.org go list -m github.com/deependujha/deep-go@${{ github.event.release.tag_name }}
+        run: GOPROXY=proxy.golang.org go list -m github.com/deependujha/go-chrometrace@${{ github.event.release.tag_name }}
