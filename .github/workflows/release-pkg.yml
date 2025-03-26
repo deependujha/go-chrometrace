@@ -1,0 +1,28 @@
+name: Deep-Go Release
+
+# https://help.github.com/en/actions/reference/events-that-trigger-workflows
+on: # Trigger the workflow on push or pull request, but only for the main branch
+  release:
+    types: [published]
+
+# based on https://github.com/pypa/gh-action-pypi-publish
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.23.0'
+    
+      - run: echo ${{ github.event.release.tag_name }}
+
+      - name: Build package
+        run: go build -v ./...
+
+      - name: Publish distribution 📦 to pkg.go.dev
+        if: startsWith(github.event.ref, 'refs/tags') || github.event_name == 'release'
+        run: GOPROXY=proxy.golang.org go list -m github.com/deependujha/deep-go@${{ github.event.release.tag_name }}
