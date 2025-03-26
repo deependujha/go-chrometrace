@@ -5,45 +5,45 @@ type TraceEventType string
 
 const (
 	// Duration trace events
-	Begin TraceEventType = "B"
-	End   TraceEventType = "E"
+	BEGIN TraceEventType = "B"
+	END   TraceEventType = "E"
 
 	// Complete trace event
-	Complete TraceEventType = "X"
+	COMPLETE TraceEventType = "X"
 
 	// Instant trace event
-	Instant TraceEventType = "I"
+	INSTANT TraceEventType = "I"
 
 	// Counter trace event
-	Counter TraceEventType = "C"
+	COUNTER TraceEventType = "C"
 
 	// Async trace events
-	NestableAsyncBegin   TraceEventType = "b"
-	NestableAsyncEnd     TraceEventType = "e"
-	NestableAsyncInstant TraceEventType = "n"
+	NESTABLE_ASYNC_BEGIN   TraceEventType = "b"
+	NESTABLE_ASYNC_END     TraceEventType = "e"
+	NESTABLE_ASYNC_INSTANT TraceEventType = "n"
 
 	// Flow trace events
-	FlowBegin TraceEventType = "s"
-	FlowStep  TraceEventType = "t"
-	FlowEnd   TraceEventType = "f"
+	FLOW_BEGIN TraceEventType = "s"
+	FLOW_STEP  TraceEventType = "t"
+	FLOW_END   TraceEventType = "f"
 
 	// Metadata trace events
-	Metadata TraceEventType = "M"
+	METADATA TraceEventType = "M"
 
 	// Sample trace event
-	Sample TraceEventType = "P"
+	SAMPLE TraceEventType = "P"
 
 	// Object trace events
-	CreateObject   TraceEventType = "N"
-	SnapshotObject TraceEventType = "O"
-	DeleteObject   TraceEventType = "D"
+	CREATE_OBJECT   TraceEventType = "N"
+	SNAPSHOT_OBJECT TraceEventType = "O"
+	DELETE_OBJECT   TraceEventType = "D"
 
 	// Memory dump trace events
-	MemoryDumpGlobal TraceEventType = "V"
-	MemoryDump       TraceEventType = "v"
+	MEMORY_DUMP_GLOBAL TraceEventType = "V"
+	MEMORY_DUMP      TraceEventType = "v"
 
 	// Mark trace event
-	Mark TraceEventType = "R"
+	MARK TraceEventType = "R"
 
 	// Clock sync event
 	CLOCK_SYNC TraceEventType = "c"
